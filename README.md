@@ -39,7 +39,7 @@ Kanban: https://github.com/users/BrandonDell/projects/3
 If you would like to reference the collaborator's GitHub profile:
 
 Brandon Dell Cioppia: https://github.com/BrandonDell
-Justin Ramos:
+Justin Ramos: https://github.com/Jramos20022
 Carlos Lavayen:  
 
 If you have any further questions please feel free to email us at: 

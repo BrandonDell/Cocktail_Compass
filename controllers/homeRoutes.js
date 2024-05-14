@@ -23,14 +23,14 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.get('/login', (req, res) => {
-  try {
-    res.render("login")
-  }catch (err) {
-    console.log(err)
-      res.status(500).json(err);
-  }
-});
+// router.get('/login', (req, res) => {
+//   try {
+//     res.render("login")
+//   }catch (err) {
+//     console.log(err)
+//       res.status(500).json(err);
+//   }
+// });
 
 // get single post router
 // router.get('/post/:id', async (req, res) => {

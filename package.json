@@ -10,5 +10,18 @@
     "handlebars": "^4.7.8",
     "pg": "^8.11.5",
     "sequelize": "^6.37.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "seed":"node seeds/seed.js",
+    "dev": "nodemon server.js"
+  },
+  "name": "cocktail_compass",
+  "description": "Cocktails are more than just drinks; they're experiences. From classic concoctions to innovative creations, each cocktail tells a story and engages the senses. In a world where mixology has become an art form and cocktail culture continues to flourish, there's a growing need for a centralized platform that celebrates and preserves the diverse array of cocktail recipes.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS backend_blitz_db;
-CREATE DATABASE backend_blitz_db;
+DROP DATABASE IF EXISTS cocktail_compass_db;
+CREATE DATABASE cocktail_compass_db;

@@ -23,6 +23,7 @@ MIT
 -Postgres: run schema.js:  \i db/schema.js
 -Postrgres: quit \q
 -Command Line: npm run seed;
+-Command Line: npm run dev:
 -Command Line: npm start;
 -App Listening on port 3001
 -Command Line Installation: node server.js;

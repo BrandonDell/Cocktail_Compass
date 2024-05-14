@@ -7,6 +7,5 @@ const userControllers = require('./userRoutes');
 
 // Define routes for each controller
 router.use('/user', userControllers);
-// Add routes for other controllers as needed
 
 module.exports = router;

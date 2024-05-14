@@ -7,8 +7,4 @@ User.hasMany(Recipe, {
   onDelete: 'CASCADE'
 });
 
-// Post.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
-
 module.exports = { User, Recipe };

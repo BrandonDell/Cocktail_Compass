@@ -1,22 +1,37 @@
-{{! Styling for login }}
-<div class="card" id="login-card">
-  <div class="card-header" id="login-card-header">
-    <h2>Login</h2>
-  </div>
-  <form id="login-form" class="card-body">
-    <div class="login-input">
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
+<div class="login-container" id="login-container">
+    <div id="login-form">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
     </div>
-    <div class="login-input">
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <div id="login-footer">
-      <button type="submit" id="login-btn" class="btn">Login</button>
-      <a type="button" href="/signup" id="signup-button">Sign up instead</a>
-    </div>
-  </form>
-</div>
 
-<script src="/js/login.js"></script>
+    <div id="signup-form" style="display: none;">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="form-group">
+          <label for="new-username">Username:</label>
+          <input type="text" id="new-username" name="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">Password:</label>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <button type="button">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+    </div>
+  </div>

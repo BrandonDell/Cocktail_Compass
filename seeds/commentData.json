@@ -1,0 +1,22 @@
+[
+    {
+        "comment_text": "This drink is amazing!",
+        "userId": 1,
+        "recipeId": 1
+      },
+      {
+        "comment_text": "Love this drink but it was strong",
+        "userId": 2,
+        "recipeId": 2
+      },
+      {
+        "comment_text": "Added a Myer's Dark Rum floater ",
+        "userId": 3,
+        "recipeId": 3
+      },
+      {
+        "comment_text": "Made mine with Buffalo Trace and it was so smooth!!",
+        "userId": 4,
+        "recipeId": 4
+      }
+]

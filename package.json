@@ -6,8 +6,9 @@
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
-    "nodemon": "^3.1.0",
+    "foundation-sites": "^6.8.1",
     "handlebars": "^4.7.8",
+    "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "sequelize": "^6.37.3"
   },
@@ -15,6 +16,8 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js",
     "dev": "nodemon server.js"
+
+
 
 
   },

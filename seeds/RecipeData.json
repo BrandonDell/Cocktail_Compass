@@ -1,0 +1,22 @@
+[
+    {
+        "recipe_name": "Classic Mojito",
+        "recipe_content": "1. In a glass, muddle fresh mint leaves and lime wedges. 2. Fill the glass with ice cubes. 3. Pour in white rum and simple syrup. 4. Top with club soda. 5. Stir gently and garnish with a mint sprig. Serve immediately."
+    },
+    {
+        "recipe_name": "Margarita",
+        "recipe_content": "1. Rub the rim of a glass with a lime wedge and dip it in salt. 2. Fill the glass with ice cubes. 3. In a shaker, combine tequila, triple sec, lime juice, and simple syrup. 4. Shake well and strain into the prepared glass. 5. Garnish with a lime wheel. Serve chilled."
+    },
+    {
+        "recipe_name": "Pina Colada",
+        "recipe_content": "1. In a blender, combine pineapple juice, coconut cream, white rum, and ice cubes. 2. Blend until smooth. 3. Pour into a glass. 4. Garnish with a pineapple wedge and a maraschino cherry. Serve chilled."
+    },
+    {
+        "recipe_name": "Old Fashioned",
+        "recipe_content": "1. In a glass, muddle a sugar cube with a few dashes of Angostura bitters. 2. Add ice cubes. 3. Pour bourbon over the ice and stir well. 4. Garnish with an orange twist and a cherry. Serve on the rocks."
+    },
+    {
+        "recipe_name": "Moscow Mule",
+        "recipe_content": "1. Fill a copper mug with ice cubes. 2. Add vodka and lime juice. 3. Top with ginger beer. 4. Stir gently. 5. Garnish with a lime wedge. Serve chilled."
+    }
+]

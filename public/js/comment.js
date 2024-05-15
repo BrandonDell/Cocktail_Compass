@@ -1,8 +1,8 @@
 const commentFormHandler = async function (event) {
     event.preventDefault();
   
-    const postId = document.querySelector('input[name="recipe-id"]').value;
-    const postBody = document.querySelector(
+    const recipeId = document.querySelector('input[name="recipeId"]').value;
+    const commentBody = document.querySelector(
       'textarea[name="comment-body"]'
     ).value;
   

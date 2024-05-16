@@ -9,8 +9,6 @@ User.hasMany(Recipe, {
   onDelete: 'CASCADE'
 });
 
-});
-
 // const Post = require('./Post');
 
 

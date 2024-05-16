@@ -3,7 +3,8 @@ const Recipe = require('./Recipe');
 const Comment = require('./Comment');
 
 User.hasMany(Recipe, {
-  foreignKey: 'user_id',
+  foreignKey: 'user_id'
+});
 
 // const Post = require('./Post');
 

@@ -1,6 +1,5 @@
 <div class='posts'>
-    {{!-- {{log post}} --}}
-  {{#each posts}}
+  {{#each post}}
     <div class='card'>
       <div class='card-header'>
         <h2>
@@ -8,13 +7,11 @@
         </h2>
         <p>Created by
           {{this.User.username}}
-          on
-          {{!-- {{format_date date_created}} --}}
         </p>
       </div>
       <div class='card-body'>
         <p>
-          {{content}}
+          {{Recipe}}
         </p>
       </div>
     </div>

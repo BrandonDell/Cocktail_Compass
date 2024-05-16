@@ -1,6 +1,6 @@
 
 // In models/Comment.js
-const { Sequelize, Model, DataTypes } = require('sequelize');
+
 
 const { Model, DataTypes } = require('sequelize');
 

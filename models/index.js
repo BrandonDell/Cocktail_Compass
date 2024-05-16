@@ -1,10 +1,11 @@
 const User = require('./User');
 const Recipe = require('./Recipe');
 const Comment = require('./Comment');
-// const Post = require('./Post');
+const Post = require('./Post');
 
 User.hasMany(Recipe, {
   foreignKey: 'user_id',
+<<<<<<< foundation
 
   onDelete: 'CASCADE'
 });
@@ -12,6 +13,11 @@ User.hasMany(Recipe, {
 // const Post = require('./Post');
 
 
+=======
+    onDelete: 'CASCADE'
+});
+
+>>>>>>> main
 User.hasMany(Comment, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
@@ -29,4 +35,4 @@ Comment.belongsTo(Recipe, {
   onDelete: 'CASCADE'
 });
 
-module.exports = { User, Recipe, Comment };
+module.exports = { User, Recipe, Comment, Post };

@@ -1,6 +1,5 @@
-// In models/Comment.js
-const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
@@ -18,6 +17,7 @@ Comment.init(
     },
     userId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -25,6 +25,7 @@ Comment.init(
     },
     recipeId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'recipe',
         key: 'id',
@@ -33,7 +34,6 @@ Comment.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment',

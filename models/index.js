@@ -4,7 +4,7 @@ const Comment = require('./Comment');
 const Post = require('./Post');
 
 User.hasMany(Recipe, {
-  foreignKey: 'user_id',
+  foreignKey: 'userId',
   onDelete: 'CASCADE'
 });
 User.hasMany(Comment, {

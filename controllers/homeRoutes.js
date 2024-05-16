@@ -3,10 +3,13 @@ const { Post, User, Recipe } = require('../models');
 
 router.get('/allPosts', async (req, res) => {
   try {
-    const recipeData = await Post.findAll({
+    const recipeData = await Recipe.findAll({
       limit: 20
     })
-    res.render("allPosts")
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+    console.log("!!!!!")
+    console.log(recipes)
+    res.render("allPosts", {recipes})
   }catch (err) {
     console.log(err)
       res.status(500).json(err);
@@ -38,6 +41,16 @@ router.get('/login', (req, res) => {
   // if statement is falsy render the login in form
     res.render('login');
   });
+
+  router.get('/signup', (req, res) => {
+    // Check to see if user is logged in..truthy 
+      if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+      }
+    // if statement is falsy render the login in form
+      res.render('signup');
+    });
 
 router.get('/addRecipe', (req, res) => {
   try {
@@ -87,4 +100,3 @@ module.exports = router;
 //         res.status(500).json(err);
 //     }
 // });
-

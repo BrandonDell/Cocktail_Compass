@@ -5,7 +5,21 @@ const withAuth = (req, res, next) => {
     } else {
       next();
     }
-  };
+};
+const apiGuard = (req, res, next) => {
+  if (!req.session.logged_in) {
+    res.status(403).json({ msg: 'Please login to view this route!' });
+  } else {
+    next();
+  }
+};
+const withoutGuard = (req, res, next) => {
+  if (!req.session.logged_in) {
+    next();
+  } else {
+    res.redirect('/');
+  }
+};
   
-  module.exports = withAuth;
+module.exports = { withAuth, apiGuard, withoutGuard };
   

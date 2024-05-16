@@ -1,3 +1,4 @@
+
 <div class='posts'>
   {{#each post}}
     <div class='card'>
@@ -17,3 +18,24 @@
     </div>
   {{/each}}
 </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cocktails</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    {{#each recipes}}
+      <div class="card">
+        <h2>{{this.name}}</h2>
+        <p>{{this.ingredients}}</p>
+        <p>{{this.instructions}}</p>
+      </div>
+    {{/each}}
+  </div>
+</body>
+</html>
+

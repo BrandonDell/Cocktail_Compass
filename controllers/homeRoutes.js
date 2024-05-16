@@ -1,24 +1,18 @@
 const router = require('express').Router();
 const { Post, User, Recipe } = require('../models');
 
-// get all recipes for homepage
-// router.get('/', async (req, res) => {
-//     try {
-//         const postData = await Post.findAll({
-//             include: [User],
-//         });
-//         const posts = postData.map((post) => post.get({ plain: true }));
-//         console.log(posts);
-//         res.render('allPosts', {
-//             posts,
-//             loggedIn: req.session.loggedIn,
-//             currentPage: 'Home',
-//       });
-//     } catch (err) {
-//       console.log(err)
-//         res.status(500).json(err);
-//     }
-// });
+router.get('/allPosts', async (req, res) => {
+  try {
+    const recipeData = await Post.findAll({
+      limit: 20
+    })
+    res.render("allPosts")
+  }catch (err) {
+    console.log(err)
+      res.status(500).json(err);
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
       const recipes = await Recipe.findAll({
@@ -34,14 +28,16 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
   }
 });
+
 router.get('/login', (req, res) => {
-  try {
-    res.render("login")
-  }catch (err) {
-    console.log(err)
-      res.status(500).json(err);
-  }
-});
+  // Check to see if user is logged in..truthy 
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  // if statement is falsy render the login in form
+    res.render('login');
+  });
 
 router.get('/addRecipe', (req, res) => {
   try {
@@ -63,6 +59,9 @@ router.get('/homepage', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Router for handling signup endpoint. Check if logged in redirect to home if no logged in redirect then to signup 
+
 
 
 // // Router for handling signup endpoint. Check if logged in redirect to home if not logged in redirect then to signup 
@@ -117,6 +116,7 @@ router.get('/allPosts', async (req, res) => {
 //   });
 
 // // Router for handling signup endpoint. Check if logged in redirect to home if no logged in redirect then to signup 
+
   router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -125,4 +125,23 @@ router.get('/allPosts', async (req, res) => {
     res.render('signup', { currentPage: 'Home' });
   });
 module.exports = router;
+
+// get all recipes for homepage
+// router.get('/', async (req, res) => {
+//     try {
+//         const postData = await Post.findAll({
+//             include: [User],
+//         });
+//         const posts = postData.map((post) => post.get({ plain: true }));
+//         console.log(posts);
+//         res.render('allPosts', {
+//             posts,
+//             loggedIn: req.session.loggedIn,
+//             currentPage: 'Home',
+//       });
+//     } catch (err) {
+//       console.log(err)
+//         res.status(500).json(err);
+//     }
+// });
 

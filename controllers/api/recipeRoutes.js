@@ -1,7 +1,7 @@
-const router = require('express').Router();
-const { Recipe, Comment } = require('../../models');
+const router = require("express").Router();
+const { Recipe, Comment } = require("../../models");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const allRecipes = await Recipe.findAll();
     res.status(200).json(allRecipes);
@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+
+router.get("/:id", async (req, res) => {
   try {
     const allRecipes = await Recipe.findOne({
       where: {
@@ -25,7 +26,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+
+router.post("/", async (req, res) => {
   try {
     const addRecipe = await Recipe.create(req.body);
     res.status(200).json(addRecipe);
@@ -35,7 +37,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   // update a recipe by its `id` value
   try {
     const recipeData = await Recipe.update(req.body, {
@@ -45,7 +47,7 @@ router.put('/:id', async (req, res) => {
       individualHooks: true,
     });
     if (!recipeData[0]) {
-      res.status(404).json({ message: 'No recipe with this id!' });
+      res.status(404).json({ message: "No recipe with this id!" });
       return;
     }
     res.status(200).json(recipeData);
@@ -54,7 +56,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   // delete a recipe by its `id` value
   try {
     const recipeData = await Recipe.findByPk(req.params.id);
@@ -69,7 +71,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.get('/:recipeId/comment', async (req, res) => {
+router.get("/:recipeId/comment", async (req, res) => {
   try {
     const allComments = await Comment.findAll({
       where: {
@@ -82,6 +84,7 @@ router.get('/:recipeId/comment', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 router.post('/:recipeId/comment', async (req, res) => {
   try {
@@ -100,6 +103,18 @@ router.post('/:recipeId/comment', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.delete("/:recipeId/comment", async (req, res) => {
+  // delete a comment by its `recipeId` value
+  try {
+    const commentData = await Recipe.findByPk(req.params.id);
+    if (!commentData) {
+      res.status(404).json({ message: "No comment with this id!" });
+      return;
+    }
+    await commentData.destroy();
+    res.status(200).json({ message: "Comment deleted successfully" });
+
 router.delete('/:recipeId/comment/:commentId', async (req, res) => {
   // delete a comment by its `recipeId` value
   try {

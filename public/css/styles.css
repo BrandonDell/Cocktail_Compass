@@ -5,6 +5,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column
+
 }
 
 .login-container {
@@ -73,5 +75,10 @@ button:hover {
   
   .card p {
     font-size: 1em;
+  }
+  
+  .top-bar {
+    border: 1px solid red;
+
   }
   

@@ -59,7 +59,7 @@ router.get('/homepage', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// Router for handling signup endpoint. Check if logged in redirect to home if no logged in redirect then to signup 
+
   router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');

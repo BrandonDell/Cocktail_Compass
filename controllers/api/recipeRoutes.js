@@ -34,9 +34,12 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/comment', async (req, res) => {
+router.get('/:recipeId/comment', async (req, res) => {
   try {
-    const allComments = await Comment.findAll();
+    const allComments = await Comment.findAll({
+      where: {
+    recipeId: req.params.recipeId
+}});
     res.status(200).json(allComments);
   } catch (err) {
     console.error(err);
@@ -44,9 +47,8 @@ router.get('/comment', async (req, res) => {
   }
 });
 
-router.post('/comment/:recipeId', async (req, res) => {
+router.post('/:recipeId/comment', async (req, res) => {
     try {
-      // const Id = req.params.recipeId;
       const userId = req.session.user_id;
       if (!userId) {
         return res.status(401).json({ message: 'User not authenticated' });

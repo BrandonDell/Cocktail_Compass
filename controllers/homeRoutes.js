@@ -1,23 +1,38 @@
 const router = require('express').Router();
-const { Post, User, Recipe} = require('../models');
+const { Post, User, Recipe } = require('../models');
 
-// get all posts for homepage
+// get all recipes for homepage
+// router.get('/', async (req, res) => {
+//     try {
+//         const postData = await Post.findAll({
+//             include: [User],
+//         });
+//         const posts = postData.map((post) => post.get({ plain: true }));
+//         console.log(posts);
+//         res.render('allPosts', {
+//             posts,
+//             loggedIn: req.session.loggedIn,
+//             currentPage: 'Home',
+//       });
+//     } catch (err) {
+//       console.log(err)
+//         res.status(500).json(err);
+//     }
+// });
 router.get('/', async (req, res) => {
-    try {
-        const postData = await Post.findAll({
-            include: [User],
-        });
-        const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(posts);
-        res.render('allPosts', {
-            posts,
-            loggedIn: req.session.loggedIn,
-            currentPage: 'Home',
+  try {
+      const recipes = await Recipe.findAll({
+          // include: [User],
       });
-    } catch (err) {
-      console.log(err)
-        res.status(500).json(err);
-    }
+      res.render('allRecipes', {
+          recipes,
+          loggedIn: req.session.loggedIn,
+          currentPage: 'Home',
+    });
+  } catch (err) {
+    console.log(err)
+      res.status(500).json(err);
+  }
 });
 router.get('/login', (req, res) => {
   try {

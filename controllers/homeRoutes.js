@@ -70,7 +70,8 @@ router.get('/allPosts', async (req, res) => {
     const recipeData = await Recipe.findAll({
       limit: 20
     })
-    res.render("allPosts")
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+    res.render("allPosts", {recipes})
   }catch (err) {
     console.log(err)
       res.status(500).json(err);

@@ -1,22 +1,19 @@
-<div class='posts'>
-    {{!-- {{log post}} --}}
-  {{#each posts}}
-    <div class='card'>
-      <div class='card-header'>
-        <h2>
-          <a href='/post/{{id}}'>{{title}}</a>
-        </h2>
-        <p>Created by
-          {{this.User.username}}
-          on
-          {{!-- {{format_date date_created}} --}}
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cocktails</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    {{#each recipes}}
+      <div class="card">
+        <h2>{{this.name}}</h2>
+        <p>{{this.ingredients}}</p>
+        <p>{{this.instructions}}</p>
       </div>
-      <div class='card-body'>
-        <p>
-          {{content}}
-        </p>
-      </div>
-    </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
+</body>
+</html>

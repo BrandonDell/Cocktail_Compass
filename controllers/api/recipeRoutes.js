@@ -34,6 +34,40 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  // update a recipe by its `id` value
+    try {
+      const recipeData= await Recipe.update(req.body, {
+        where: {
+          id: req.params.id,
+        },
+        individualHooks: true
+      });
+      if (!recipeData[0]) {
+        res.status(404).json({ message: 'No recipe with this id!' });
+        return;
+      }
+      res.status(200).json(recipeData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+  // delete a recipe by its `id` value
+  try {
+  const recipeData = await Recipe.findByPk(req.params.id);
+  if (!recipeData) {
+    res.status(404).json({ message: 'No recipe with this id!' });
+    return;
+  }
+  await recipeData.destroy();
+  res.status(200).json({ message: 'Recipe deleted successfully' });
+  } catch (err) {
+  res.status(500).json(err);
+  }
+});
+
 router.get('/:recipeId/comment', async (req, res) => {
   try {
     const allComments = await Comment.findAll({
@@ -63,5 +97,19 @@ router.post('/:recipeId/comment', async (req, res) => {
         console.error(err);
         res.status(500).json(err);
     }
+});
+router.delete('/:recipeId/comment', async (req, res) => {
+  // delete a comment by its `recipeId` value
+  try {
+  const commentData = await Recipe.findByPk(req.params.id);
+  if (!commentData) {
+    res.status(404).json({ message: 'No comment with this id!' });
+    return;
+  }
+  await commentData.destroy();
+  res.status(200).json({ message: 'Comment deleted successfully' });
+  } catch (err) {
+  res.status(500).json(err);
+  }
 });
 module.exports = router;

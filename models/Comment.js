@@ -1,8 +1,4 @@
 // In models/Comment.js
-<<<<<<< all-post
-
-=======
->>>>>>> main
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');

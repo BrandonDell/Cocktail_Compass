@@ -41,6 +41,18 @@ router.get('/addRecipe', (req, res) => {
   }
 });
 
+router.get('/allPosts', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findAll({
+      limit: 20
+    })
+    res.render("allPosts")
+  }catch (err) {
+    console.log(err)
+      res.status(500).json(err);
+  }
+});
+
 // get single post router
 // router.get('/post/:id', async (req, res) => {
 //     try {

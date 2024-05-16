@@ -65,6 +65,8 @@ router.get('/homepage', async (req, res) => {
 });
 
 
+// // Router for handling signup endpoint. Check if logged in redirect to home if not logged in redirect then to signup 
+
 router.get('/allPosts', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({

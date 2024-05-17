@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/:id", async (req, res) => {
   try {
     const allRecipes = await Recipe.findOne({
@@ -25,7 +24,6 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.post("/", async (req, res) => {
   try {
@@ -85,7 +83,6 @@ router.get("/:recipeId/comment", async (req, res) => {
   }
 });
 
-
 router.post('/:recipeId/comment', async (req, res) => {
   try {
     const userId = req.session.user_id;
@@ -114,6 +111,11 @@ router.delete("/:recipeId/comment", async (req, res) => {
     }
     await commentData.destroy();
     res.status(200).json({ message: "Comment deleted successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
 router.delete('/:recipeId/comment/:commentId', async (req, res) => {
   // delete a comment by its `recipeId` value

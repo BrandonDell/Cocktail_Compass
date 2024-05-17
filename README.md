@@ -41,16 +41,17 @@ If you would like to reference the collaborator's GitHub profile:
 
 Brandon Dell Cioppia: https://github.com/BrandonDell
 Justin Ramos: https://github.com/Jramos20022
-Carlos Lavayen:  
+Carlos Lavayen: https://github.com/CarlosLavayenJr
 
 If you have any further questions please feel free to email us at: 
 Brandon Dell Cioppia: bdellcioppia@gmail.com
 Justin Ramos: jramos20022@gmaill.com
 Carlos lavayen: clavayen98@hotmail.com
 
-GitHub Project Link: 
+GitHub Project Link: https://brandondell.github.io/Cocktail_Compass/
 ## Image
+![DellCioppia](./public/images/Mojio.jpg)
 ![DellCioppia]()
 ## Credits
 -UCF Coding Bootcamp Instructor John, TA Mary, and TA Cody
--UCF 
+-UCF Tutor session with Chris Thursday 4/16/24

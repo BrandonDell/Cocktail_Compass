@@ -1,16 +1,23 @@
-<form>
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="medium-6 cell">
-        <label>Cocktail Name
-          <input type="text" placeholder="Name">
-        </label>
-      </div>
-      <div class="medium-6 cell">
-        <label>Cocktail Ingredients
-          <input type="text" placeholder="Ingredients">
-        </label>
+<div class="add-recipe-section">
+  <h2>Add a Recipe</h2>
+  <form id="new-post-form">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-12 cell">
+          <label>Cocktail Name
+            <input name="recipe_name" type="text" placeholder="Name">
+          </label>
+        </div>
+        <div class="medium-12 cell">
+          <label>Cocktail Ingredients
+            <textarea name="recipe_content" placeholder="Ingredients" rows="5"></textarea>
+          </label>
+        </div>
+        <div class="medium-12 cell">
+          <button type="submit" class="button">Submit</button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
+<script src="/js/addRecipe.js"></script>

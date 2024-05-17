@@ -4,7 +4,7 @@ const newFormHandler = async function (event) {
   const recipe_name = document.querySelector('input[name="recipe_name"]').value;
   const recipe_content = document.querySelector('textarea[name="recipe_content"]').value;
 
-  await fetch(`/api/recipe`, {
+  await fetch(`/api/recipes`, {
     method: "POST",
     body: JSON.stringify({
       recipe_name,
@@ -13,7 +13,7 @@ const newFormHandler = async function (event) {
     headers: { "Content-Type": "application/json" },
   });
 
-  document.location.replace("/homepage");
+  document.location.replace("/allPosts");
 };
 
 document

@@ -63,11 +63,11 @@ router.get("/addRecipe", (req, res) => {
 });
 router.get("/homepage", async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const postData = await Recipe.findAll({
       include: [User],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("home", { posts, loggedIn: req.session.loggedIn });
+    res.render("homepage", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

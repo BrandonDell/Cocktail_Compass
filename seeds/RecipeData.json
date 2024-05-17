@@ -18,5 +18,45 @@
     {
         "recipe_name": "Moscow Mule",
         "recipe_content": "1. Fill a copper mug with ice cubes. 2. Add vodka and lime juice. 3. Top with ginger beer. 4. Stir gently. 5. Garnish with a lime wedge. Serve chilled."
+    },
+    {
+        "recipe_name": "Daiquiri",
+        "recipe_content": "1. In a shaker, combine white rum, lime juice, and simple syrup. 2. Fill with ice and shake well. 3. Strain into a chilled cocktail glass. 4. Garnish with a lime wheel. Serve immediately."
+    },
+    {
+        "recipe_name": "Whiskey Sour",
+        "recipe_content": "1. In a shaker, combine whiskey, lemon juice, and simple syrup. 2. Fill with ice and shake well. 3. Strain into a rocks glass filled with ice. 4. Garnish with a cherry and an orange slice. Serve immediately."
+    },
+    {
+        "recipe_name": "Mai Tai",
+        "recipe_content": "1. In a shaker, combine light rum, dark rum, lime juice, orange curaçao, and orgeat syrup. 2. Fill with ice and shake well. 3. Strain into a glass filled with ice. 4. Garnish with a mint sprig and a lime wheel. Serve immediately."
+    },
+    {
+        "recipe_name": "Cosmopolitan",
+        "recipe_content": "1. In a shaker, combine vodka, triple sec, cranberry juice, and lime juice. 2. Fill with ice and shake well. 3. Strain into a chilled cocktail glass. 4. Garnish with a lime twist. Serve immediately."
+    },
+    {
+        "recipe_name": "Negroni",
+        "recipe_content": "1. In a glass, combine gin, Campari, and sweet vermouth. 2. Fill with ice and stir well. 3. Garnish with an orange twist. Serve on the rocks."
+    },
+    {
+        "recipe_name": "Mint Julep",
+        "recipe_content": "1. In a glass, muddle fresh mint leaves with simple syrup. 2. Fill the glass with crushed ice. 3. Add bourbon and stir well. 4. Garnish with a mint sprig. Serve immediately."
+    },
+    {
+        "recipe_name": "Tom Collins",
+        "recipe_content": "1. In a shaker, combine gin, lemon juice, and simple syrup. 2. Fill with ice and shake well. 3. Strain into a tall glass filled with ice. 4. Top with club soda. 5. Garnish with a lemon slice and a cherry. Serve immediately."
+    },
+    {
+        "recipe_name": "Gin and Tonic",
+        "recipe_content": "1. Fill a glass with ice cubes. 2. Add gin and top with tonic water. 3. Stir gently. 4. Garnish with a lime wedge. Serve immediately."
+    },
+    {
+        "recipe_name": "Bloody Mary",
+        "recipe_content": "1. In a shaker, combine vodka, tomato juice, lemon juice, Worcestershire sauce, hot sauce, salt, and pepper. 2. Fill with ice and shake well. 3. Strain into a glass filled with ice. 4. Garnish with a celery stalk and a lemon wedge. Serve immediately."
+    },
+    {
+        "recipe_name": "Aperol Spritz",
+        "recipe_content": "1. Fill a glass with ice cubes. 2. Add Aperol, Prosecco, and a splash of soda water. 3. Stir gently. 4. Garnish with an orange slice. Serve immediately."
     }
 ]

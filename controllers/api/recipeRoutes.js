@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/:id", async (req, res) => {
   try {
     const allRecipes = await Recipe.findOne({
@@ -25,7 +24,6 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.post("/", async (req, res) => {
   try {
@@ -61,11 +59,11 @@ router.delete("/:id", async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id);
     if (!recipeData) {
-      res.status(404).json({ message: 'No recipe with this id!' });
+      res.status(404).json({ message: "No recipe with this id!" });
       return;
     }
     await recipeData.destroy();
-    res.status(200).json({ message: 'Recipe deleted successfully' });
+    res.status(200).json({ message: "Recipe deleted successfully" });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -85,12 +83,11 @@ router.get("/:recipeId/comment", async (req, res) => {
   }
 });
 
-
-router.post('/:recipeId/comment', async (req, res) => {
+router.post("/:recipeId/comment", async (req, res) => {
   try {
     const userId = req.session.user_id;
     if (!userId) {
-      return res.status(401).json({ message: 'User not authenticated' });
+      return res.status(401).json({ message: "User not authenticated" });
     }
     const newComment = await Comment.create({
       comment_text: req.body.comment_text,
@@ -114,17 +111,23 @@ router.delete("/:recipeId/comment", async (req, res) => {
     }
     await commentData.destroy();
     res.status(200).json({ message: "Comment deleted successfully" });
+    return;
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
-router.delete('/:recipeId/comment/:commentId', async (req, res) => {
+router.delete("/:recipeId/comment/:commentId", async (req, res) => {
   // delete a comment by its `recipeId` value
   try {
     const commentData = await Comment.findByPk(req.params.commentId);
     if (!commentData) {
-      res.status(404).json({ message: 'No comment with this id!' });
+      res.status(404).json({ message: "No comment with this id!" });
       return;
     }
     await commentData.destroy();
-    res.status(200).json({ message: 'Comment deleted successfully' });
+    res.status(200).json({ message: "Comment deleted successfully" });
     return;
   } catch (err) {
     res.status(500).json(err);

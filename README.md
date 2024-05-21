@@ -30,10 +30,10 @@ MIT
 
 
 ## Run  
-Insomnia: run all 15 prompts: Categories, Products and Tags all need GET ALL, GET ONE, POST, PUT, and DELETE methods.
+Insomnia: run all need GET ALL, GET ONE, POST, PUT, and DELETE methods.
     
 ## Github links: 
-Repository: https://github.com/BrandonDell/Backend_Blitz
+Repository: https://github.com/BrandonDell/Cocktail_Compass
 Kanban: https://github.com/users/BrandonDell/projects/3
 
 ## Questions
@@ -49,9 +49,11 @@ Justin Ramos: jramos20022@gmaill.com
 Carlos lavayen: clavayen98@hotmail.com
 
 GitHub Project Link: https://brandondell.github.io/Cocktail_Compass/
+Render Link: https://cocktail-compass.onrender.com
+
 ## Image
 ![DellCioppia](./public/images/Mojio.jpg)
 ![DellCioppia]()
 ## Credits
 -UCF Coding Bootcamp Instructor John, TA Mary, and TA Cody
--UCF Tutor session with Chris Thursday 4/16/24
+-UCF Brandon had a tutor session with Chris Thursday 4/16/24

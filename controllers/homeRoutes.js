@@ -17,21 +17,21 @@ router.get("/allPosts", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const recipes = await Recipe.findAll({
-      // include: [User],
-    });
-    res.render("allRecipes", {
-      recipes,
-      loggedIn: req.session.loggedIn,
-      currentPage: "Home",
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// router.get("/", async (req, res) => {
+//   try {
+//     const recipes = await Recipe.findAll({
+//       // include: [User],
+//     });
+//     res.render("allRecipes", {
+//       recipes,
+//       loggedIn: req.session.loggedIn,
+//       currentPage: "Home",
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/login", (req, res) => {
   // Check to see if user is logged in..truthy
@@ -61,12 +61,13 @@ router.get("/addRecipe", (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get("/homepage", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const postData = await Recipe.findAll({
       include: [User],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
     res.render("homepage", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -84,18 +85,27 @@ router.get("/signup", (req, res) => {
 
 router.get("/favorites", withAuth, async (req, res) => {
   try {
-    const recipes = (
+    const userRecipes = 
       await Recipe.findAll({
         where: { userId: req.session.userId },
       })
-    ).map((user) => user.get({ plain: true }));
-    console.log(recipes);
-    res.render("favorites", { loggedIn: true, recipes });
+    const recipes = userRecipes.map((user) => user.get({ plain: true }));
+    console.log(recipes, "==================");
+    res.render("favorites", recipes);
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
+
+router.get('/profile', async (req, res) => {
+  try {
+    res.render('profile')
+  } catch (error) {
+    console.error(error) 
+    res.status(500).json(error)
+  }
+})
 module.exports = router;
 
 // get all recipes for homepage

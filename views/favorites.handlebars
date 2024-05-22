@@ -1,10 +1,9 @@
 <div class='recipes'>
-    {{log recipes}}
   {{#each recipes}}
     <div class='card'>
       <div class='card-header'>
         <h2>
-          <a href='/post/{{id}}'>{{title}}</a>
+          <a href='/post/{{id}}'>{{recipe_name}}</a>
         </h2>
         <p>Created by
           {{this.User.username}}
@@ -14,7 +13,7 @@
       </div>
       <div class='card-body'>
         <p>
-          {{content}}
+          {{recipe_content}}
         </p>
       </div>
     </div>
